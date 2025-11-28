@@ -1,0 +1,107 @@
+site_name: Ramsi Kalia
+site_url: https://ramsi.dev
+site_description: Multi-cloud resume website showcasing cloud engineering skills
+site_author: Ramsi Kalia
+
+theme:
+  name: material
+  logo: assets/images/favicon_io/favicon-32x32.png
+  favicon: assets/images/favicon_io/favicon.ico
+  palette:
+    # Light mode
+    - scheme: default
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  custom_dir: docs/overrides
+
+nav:
+  - Home: index.md
+  - Resume: resume/index.md
+  - Projects:
+      - Overview: projects/index.md
+      - Cloud Resume Challenge: projects/cloud-resume-challenge.md
+      - Yoga Assistant RAG: projects/yoga-rag.md
+      - HagXwon AI Platform: projects/hagxwon.md
+      - MCP Albumentations: projects/mcp-albumentations.md
+      - EdgeMind 5G-MEC: projects/edgemind.md
+      - Knowledge Graph Agents: projects/knowledge-graph-agents.md
+      - Discord MCP Server: projects/discord-mcp.md
+      - Korean Learning MUD: projects/korean-learning-mud.md
+      - Yoga Assistant RAG: projects/yoga-rag.md
+      - HagXwon AI Platform: projects/hagxwon.md
+      - MCP Albumentations: projects/mcp-albumentations.md
+      - Knowledge Graph Agents: projects/knowledge-graph-agents.md
+      - Discord MCP Server: projects/discord-mcp.md
+  - Blog:
+      - Overview: blog/index.md
+      - Learning Logs:
+          - 300 Days 2025: blog/300-days-2025.md
+          - 300 Days 2024: blog/300-days-2024.md
+      - Technical Articles:
+          - HagXwon Architecture: blog/hagxwon-architecture.md
+          - Research Papers: blog/research-papers.md
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+  - tags
+
+# Exclude project readme files from build (they have external links)
+exclude_docs: |
+  assets/project_readmes/
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.details
+  - admonition
+  - attr_list
+  - md_in_html
+  - def_list
+  - tables
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Ramsi-K
+      name: GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/ramsikalia
+      name: LinkedIn
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/ramsi_k_
+      name: X/Twitter
+
+extra_css:
+  - assets/css/custom.css
+
+extra_javascript:
+  - assets/js/identity-card.js
+  - assets/js/visitor-counter.js
