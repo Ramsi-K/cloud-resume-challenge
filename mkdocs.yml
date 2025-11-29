@@ -45,11 +45,6 @@ nav:
       - Knowledge Graph Agents: projects/knowledge-graph-agents.md
       - Discord MCP Server: projects/discord-mcp.md
       - Korean Learning MUD: projects/korean-learning-mud.md
-      - Yoga Assistant RAG: projects/yoga-rag.md
-      - HagXwon AI Platform: projects/hagxwon.md
-      - MCP Albumentations: projects/mcp-albumentations.md
-      - Knowledge Graph Agents: projects/knowledge-graph-agents.md
-      - Discord MCP Server: projects/discord-mcp.md
   - Blog:
       - Overview: blog/index.md
       - Learning Logs:
@@ -58,6 +53,7 @@ nav:
       - Technical Articles:
           - HagXwon Architecture: blog/hagxwon-architecture.md
           - Research Papers: blog/research-papers.md
+  - Contact: contact.md
 
 plugins:
   - search
