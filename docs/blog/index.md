@@ -18,7 +18,7 @@ Key highlights:
 - GenAI Bootcamp (RED SQUAD recognition)
 - BeSA Migration & Modernization Bootcamp
 
-[Read the full log →](300-days-2025.md)
+[Read the full log →](logs/300-days-2025.md)
 
 <div class="section-label">Year 1 (2024)</div>
 
@@ -31,7 +31,7 @@ Key highlights:
 - MLOps Zoomcamp exploration
 - Notebookify project (learning experience)
 
-[Read the full log →](300-days-2024.md)
+[Read the full log →](logs/300-days-2024.md)
 
 ---
 
@@ -41,7 +41,7 @@ Key highlights:
 
 **HagXwon AI Learning Platform - TOGAF Study** - Comprehensive enterprise architecture documentation for an AI-powered Korean language learning platform. Covers business case, conceptual design, TOGAF compliance, and project requirements using enterprise architecture best practices.
 
-[Read the full study →](hagxwon-architecture.md)
+[Read the full study →](posts/hagxwon-architecture.md)
 
 <div class="section-label">Research Papers</div>
 
@@ -53,7 +53,7 @@ Featured papers:
 - Turn Detection in AI Language Learning (Published)
 - Beyond Human Mimicry: Rethinking AI Identity (In Progress)
 
-[View all research →](research-papers.md)
+[View all research →](research/research-papers.md)
 
 <div class="section-label">Future Topics</div>
 

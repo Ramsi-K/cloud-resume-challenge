@@ -406,4 +406,4 @@ Each of these will be defined in separate `.tf` files in the `aws/frontend/` dir
 
 ---
 
-[← Back to Blog](index.md)
+[← Back to Blog](../index.md)

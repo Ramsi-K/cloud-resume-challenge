@@ -124,4 +124,4 @@ I'm curious to see if this choice pays off or if I'll run into challenges I didn
 
 ---
 
-[← Back to Blog](index.md)
+[← Back to Blog](../index.md)

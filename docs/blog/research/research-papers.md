@@ -69,7 +69,7 @@ Exploring agentic orchestration frameworks for edge computing in the transition 
 - Real-world use case validation (autonomous vehicles, AR/VR, industrial IoT)
 
 **Status:** Framework implemented, paper in preparation  
-**Related Project:** [EdgeMind 5G-MEC](../projects/edgemind.md)
+**Related Project:** [EdgeMind 5G-MEC](../../projects/edgemind.md)
 
 ---
 
@@ -160,4 +160,4 @@ Areas of interest for future research:
 
 ---
 
-[← Back to Blog](index.md)
+[← Back to Blog](../index.md)

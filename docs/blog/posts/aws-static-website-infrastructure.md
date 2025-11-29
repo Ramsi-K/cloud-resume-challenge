@@ -42,7 +42,7 @@ User → Route 53 (DNS) → CloudFront (CDN + HTTPS) → S3 (Private Storage)
 
 ---
 
-## Task 12: S3 Bucket for Static Website Hosting
+## S3 Bucket for Static Website Hosting
 
 <div class="section-label">The Challenge</div>
 
@@ -188,7 +188,7 @@ s3_bucket_arn = "arn:aws:s3:::cloud-resume-challenge-website-us-east-1"
 
 ---
 
-## Task 13: ACM Certificate for HTTPS
+## ACM Certificate for HTTPS
 
 <div class="section-label">The Challenge</div>
 
@@ -303,7 +303,7 @@ DNS validation took about 5-10 minutes after adding the CNAME records. The certi
 
 ---
 
-## Task 14: CloudFront Distribution
+## CloudFront Distribution
 
 <div class="section-label">The Challenge</div>
 
@@ -448,7 +448,7 @@ I chose `PriceClass_100` because:
 
 ---
 
-## Task 15: Route 53 DNS Configuration
+## Route 53 DNS Configuration
 
 <div class="section-label">The Challenge</div>
 
