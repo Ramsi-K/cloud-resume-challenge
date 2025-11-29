@@ -51,6 +51,7 @@ nav:
           - 300 Days 2025: blog/300-days-2025.md
           - 300 Days 2024: blog/300-days-2024.md
       - Technical Articles:
+          - Terraform AWS Setup: blog/terraform-aws-setup.md
           - HagXwon Architecture: blog/hagxwon-architecture.md
           - Research Papers: blog/research-papers.md
   - Contact: contact.md
