@@ -48,6 +48,12 @@ resource "aws_cloudfront_distribution" "website" {
     default_ttl            = 3600   # 1 hour
     max_ttl                = 86400  # 24 hours
     compress               = true   # Enable gzip compression
+
+    # CloudFront Function to append index.html
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.url_rewrite.arn
+    }
   }
 
   # Custom error responses
