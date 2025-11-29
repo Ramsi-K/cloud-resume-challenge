@@ -57,13 +57,6 @@ Featured papers:
 
 <div class="section-label">Future Topics</div>
 
-Upcoming deep dives on:
-
-- RAG pipelines and LLM optimization
-- MCP toolchain development
-- Multi-agent system design patterns
-- Cloud-native AI deployment strategies
-
 ---
 
 ## Subscribe
