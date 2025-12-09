@@ -19,7 +19,11 @@ tags:
 
 <div class="section-label">Cloud Resume Challenge</div>
 
-Today I built the complete infrastructure for hosting a static website on AWS using Terraform. This covers S3 storage, CloudFront CDN, SSL certificates, and DNS configuration. Here's everything I learned.
+Today I built the complete infrastructure for hosting a static website on AWS using Terraform. This covers S3 storage, CloudFront CDN, SSL certificates, and DNS configuration.
+
+<!-- more -->
+
+Here's everything I learned.
 
 ---
 

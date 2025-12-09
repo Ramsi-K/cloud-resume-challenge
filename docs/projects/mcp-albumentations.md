@@ -28,7 +28,7 @@ Built an MCP-compliant image augmentation server that exposes the Albumentations
 - **Cross-Platform Support** - Works with Claude Desktop, Kiro IDE, and CLI
 - **Enterprise-Ready** - Secure credential management without exposing API keys
 - **14 MCP Tools** - 9 core augmentation tools + 5 VLM tools
-- **Open Source** - MIT License, Hacktoberfest 2024 participant
+- **Open Source** - MIT License, Hacktoberfest 2025 participant
 
 ### Technical Innovation
 
@@ -211,7 +211,7 @@ uvx albumentations-mcp
 ### Community
 
 - **Open Source**: MIT License, accepting contributions
-- **Hacktoberfest 2024**: Active participant
+- **Hacktoberfest 2025**: Active participant
 - **Documentation**: Comprehensive guides for contributors
 - **Contribution Ideas**: 20+ suggested improvements
 - **High-Impact Areas**: Transform mappings, presets, documentation, testing

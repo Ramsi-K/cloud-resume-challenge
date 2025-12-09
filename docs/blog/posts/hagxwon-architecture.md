@@ -16,7 +16,11 @@ tags:
 
 <div class="section-label">Overview</div>
 
-A comprehensive enterprise architecture study for an AI-powered Korean language learning platform, developed using TOGAF (The Open Group Architecture Framework) methodology. This project demonstrates end-to-end enterprise architecture planning from business case through technical implementation.
+A comprehensive enterprise architecture study for an AI-powered Korean language learning platform, developed using TOGAF (The Open Group Architecture Framework) methodology.
+
+<!-- more -->
+
+This project demonstrates end-to-end enterprise architecture planning from business case through technical implementation.
 
 ---
 

@@ -25,7 +25,7 @@ Collection of research papers and academic work exploring AI systems, edge compu
 
 ### Turn Detection in AI-Powered Language Learning
 
-<div class="section-label">Dissertation - 2024</div>
+<div class="section-label">Dissertation - 2025</div>
 
 An examination of turn detection mechanisms in AI language learning systems, with particular focus on cultural, neurodivergent, and ethical implications.
 
@@ -40,7 +40,7 @@ This dissertation investigates how AI systems detect and respond to conversation
 - Ethical framework for AI language learning systems
 - Design recommendations for inclusive AI tutors
 
-**Published:** Academia.edu, 2024  
+**Published:** Academia.edu, 2025  
 [Read Full Paper →](https://www.academia.edu/128366473/Turn_Detection_in_AI_Powered_Language_Learning_Cultural_Neurodivergent_and_Ethical_Implications)
 
 ---

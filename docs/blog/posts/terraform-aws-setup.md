@@ -18,6 +18,8 @@ tags:
 
 This guide walks through setting up Terraform for AWS infrastructure management, from installing tools to understanding state management. This is part of my Cloud Resume Challenge journey where I'm deploying a multi-cloud resume website.
 
+<!-- more -->
+
 ---
 
 ## Prerequisites

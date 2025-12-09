@@ -16,6 +16,8 @@ tags:
 
 For the Cloud Resume Challenge, I'm deploying the same website to AWS, Azure, and Google Cloud. I had to choose an Infrastructure as Code tool, and I wanted to document my thinking process.
 
+<!-- more -->
+
 ---
 
 ## The Situation
