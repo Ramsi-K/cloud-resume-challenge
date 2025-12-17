@@ -19,3 +19,14 @@ output "dynamodb_table_arn" {
   description = "ARN of the DynamoDB table for state locking"
   value       = aws_dynamodb_table.terraform_state_lock.arn
 }
+
+# OIDC outputs for GitHub Actions
+output "github_actions_role_arn" {
+  description = "ARN of the IAM role for GitHub Actions"
+  value       = aws_iam_role.github_actions.arn
+}
+
+output "github_oidc_provider_arn" {
+  description = "ARN of the GitHub OIDC provider"
+  value       = aws_iam_openid_connect_provider.github_actions.arn
+}

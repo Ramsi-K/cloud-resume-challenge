@@ -17,3 +17,9 @@ variable "project_name" {
   type        = string
   default     = "cloud-resume-challenge"
 }
+
+variable "domain_name" {
+  description = "Domain name for the website"
+  type        = string
+  default     = "ramsi.dev"
+}
