@@ -1,9 +1,17 @@
 # Terraform Backend Configuration
-# This tells Terraform where to store its state file
-# Currently using local state (terraform.tfstate in this directory)
+# Uses remote state in S3 with DynamoDB locking
 
 terraform {
   required_version = ">= 1.7"
+
+  backend "s3" {
+    bucket         = "terraform-state-cloud-resume-challenge-us-east-1"
+    key            = "frontend/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-state-lock"
+    encrypt        = true
+    profile        = "ramsi_admin_access"
+  }
 
   required_providers {
     aws = {
