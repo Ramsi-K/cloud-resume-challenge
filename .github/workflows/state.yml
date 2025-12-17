@@ -1,16 +1,16 @@
-name: Deploy Backend
+name: Deploy State Infrastructure
 
 on:
   push:
     branches: [main]
     paths:
-      - 'aws/backend/**'
-      - '.github/workflows/backend.yml'
+      - 'aws/state/**'
+      - '.github/workflows/state.yml'
   pull_request:
     branches: [main]
     paths:
-      - 'aws/backend/**'
-      - '.github/workflows/backend.yml'
+      - 'aws/state/**'
+      - '.github/workflows/state.yml'
   workflow_dispatch: # Allow manual triggering
 
 permissions:
@@ -18,7 +18,7 @@ permissions:
   contents: read # Required to checkout code
 
 jobs:
-  terraform-backend:
+  terraform-state:
     runs-on: ubuntu-latest
 
     steps:
@@ -34,37 +34,37 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::845822318516:role/cloud-resume-challenge-github-actions-role
-          role-session-name: GitHubActions-Backend-App
+          role-session-name: GitHubActions-State
           aws-region: us-east-1
 
-      - name: Terraform Init (Backend)
-        working-directory: aws/backend
+      - name: Terraform Init (State)
+        working-directory: aws/state
         run: terraform init
 
-      - name: Terraform Validate (Backend)
-        working-directory: aws/backend
+      - name: Terraform Validate (State)
+        working-directory: aws/state
         run: |
           echo "Validating Terraform configuration..."
           terraform validate
           echo "Terraform validation successful"
 
-      - name: Terraform Plan (Backend)
-        working-directory: aws/backend
+      - name: Terraform Plan (State)
+        working-directory: aws/state
         run: |
           echo "Creating Terraform plan..."
           terraform plan -no-color
           echo "Terraform plan completed"
 
-      - name: Terraform Apply (Backend)
+      - name: Terraform Apply (State)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        working-directory: aws/backend
+        working-directory: aws/state
         run: |
           echo "Applying Terraform changes..."
           terraform apply -auto-approve -no-color
-          echo "Backend infrastructure deployment completed"
+          echo "State infrastructure deployment completed"
 
       - name: Deployment summary
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
-          echo "Backend deployment completed successfully!"
+          echo "State infrastructure deployment completed successfully!"
           echo "Infrastructure updated at: $(date -u)"
