@@ -6,9 +6,10 @@ resource "aws_acm_certificate" "website" {
   domain_name       = var.domain_name
   validation_method = "DNS"
 
-  # Optional: Add www subdomain
+  # Add www subdomain and wildcard for subdomains
   subject_alternative_names = [
-    "www.${var.domain_name}"
+    "www.${var.domain_name}",
+    "*.${var.domain_name}"
   ]
 
   tags = {

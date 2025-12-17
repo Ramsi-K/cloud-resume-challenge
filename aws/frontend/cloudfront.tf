@@ -20,7 +20,8 @@ resource "aws_cloudfront_distribution" "website" {
   # Custom domain names
   aliases = [
     var.domain_name,
-    var.domain_name_www
+    var.domain_name_www,
+    "*.${var.domain_name}"
   ]
 
   # S3 origin configuration
