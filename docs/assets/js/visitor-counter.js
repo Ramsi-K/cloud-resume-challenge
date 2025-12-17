@@ -1,50 +1,85 @@
 // Visitor Counter Widget
-// This will be connected to the backend API once deployed
+// Connected to AWS API Gateway + Lambda + DynamoDB
 
 (function () {
-  const sidebarCounter = document.getElementById('visitor-count-sidebar');
+  // API endpoint using custom domain
+  const API_ENDPOINT = 'https://api.ramsi.dev/visitor-count';
 
-  if (!sidebarCounter) {
-    console.warn('Visitor counter element not found');
-    return;
+  function initVisitorCounter() {
+    const sidebarCounter = document.getElementById('visitor-count-sidebar');
+
+    if (!sidebarCounter) {
+      // Element not ready yet, try again in 100ms
+      setTimeout(initVisitorCounter, 100);
+      return;
+    }
+
+    // Set loading state
+    sidebarCounter.textContent = 'Loading...';
+
+    async function fetchVisitorCount() {
+      try {
+        // POST request to increment counter
+        const response = await fetch(API_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // Update sidebar counter with formatted number
+        if (sidebarCounter && data.count) {
+          sidebarCounter.textContent = data.count.toLocaleString();
+        } else {
+          throw new Error('Invalid response format');
+        }
+
+        console.log('Visitor count updated:', data.count);
+      } catch (error) {
+        console.error('Error fetching visitor count:', error);
+
+        // Fallback: try to get current count without incrementing
+        try {
+          const fallbackResponse = await fetch(API_ENDPOINT, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+
+          if (fallbackResponse.ok) {
+            const fallbackData = await fallbackResponse.json();
+            if (sidebarCounter && fallbackData.count) {
+              sidebarCounter.textContent = fallbackData.count.toLocaleString();
+              console.log('Fallback visitor count loaded:', fallbackData.count);
+              return;
+            }
+          }
+        } catch (fallbackError) {
+          console.error('Fallback request also failed:', fallbackError);
+        }
+
+        // Final fallback
+        if (sidebarCounter) {
+          sidebarCounter.textContent = 'N/A';
+        }
+      }
+    }
+
+    // Call the function when element is ready
+    fetchVisitorCount();
   }
 
-  // Placeholder - will be replaced with actual API call
-  sidebarCounter.textContent = 'Loading...';
-
-  // TODO: Replace with actual API endpoint after backend deployment
-  // const API_ENDPOINT = 'https://api.your-domain.com/visitor-count';
-
-  // Simulated API call structure (to be implemented)
-  /*
-    async function fetchVisitorCount() {
-        try {
-            const response = await fetch(API_ENDPOINT, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            
-            // Update sidebar counter
-            if (sidebarCounter) {
-                sidebarCounter.textContent = data.count.toLocaleString();
-            }
-        } catch (error) {
-            console.error('Error fetching visitor count:', error);
-            if (sidebarCounter) {
-                sidebarCounter.textContent = 'N/A';
-            }
-        }
-    }
-    
-    // Call the function when ready
-    fetchVisitorCount();
-    */
+  // Start trying to initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initVisitorCounter);
+  } else {
+    initVisitorCounter();
+  }
 })();
