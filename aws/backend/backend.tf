@@ -10,7 +10,6 @@ terraform {
     region         = "us-east-1"
     dynamodb_table = "terraform-state-lock"
     encrypt        = true
-    profile        = "ramsi_admin_access"
   }
 
   required_providers {
@@ -23,8 +22,7 @@ terraform {
 
 # AWS Provider Configuration
 provider "aws" {
-  region  = var.aws_region
-  profile = var.aws_profile
+  region = var.aws_region
 
   default_tags {
     tags = {

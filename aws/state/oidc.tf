@@ -79,10 +79,8 @@ resource "aws_iam_policy" "github_actions_frontend" {
           "s3:PutBucketPublicAccessBlock"
         ]
         Resource = [
-          "arn:aws:s3:::${var.domain_name}",
-          "arn:aws:s3:::${var.domain_name}/*",
-          "arn:aws:s3:::www.${var.domain_name}",
-          "arn:aws:s3:::www.${var.domain_name}/*"
+          "arn:aws:s3:::${var.project_name}-website-${var.aws_region}",
+          "arn:aws:s3:::${var.project_name}-website-${var.aws_region}/*"
         ]
       },
       {

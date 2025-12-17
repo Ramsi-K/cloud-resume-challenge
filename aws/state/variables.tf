@@ -6,11 +6,7 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "aws_profile" {
-  description = "AWS CLI profile to use"
-  type        = string
-  default     = "ramsi_admin_access"
-}
+
 
 variable "project_name" {
   description = "Name of the project (used for resource naming)"

@@ -60,7 +60,7 @@ jobs:
           echo "Deploying to S3..."
 
           # Upload built site to S3
-          aws s3 sync site/ s3://ramsi.dev --delete --exact-timestamps
+          aws s3 sync site/ s3://cloud-resume-challenge-website-us-east-1 --delete --exact-timestamps
 
           echo "Files uploaded to S3"
 
