@@ -167,7 +167,8 @@ resource "aws_iam_policy" "github_actions_terraform" {
           "dynamodb:UpdateTable",
           "dynamodb:TagResource",
           "dynamodb:UntagResource",
-          "dynamodb:ListTagsOfResource"
+          "dynamodb:ListTagsOfResource",
+          "dynamodb:DescribeContinuousBackups"
         ]
         Resource = "*"
       },
@@ -193,7 +194,11 @@ resource "aws_iam_policy" "github_actions_terraform" {
           "iam:DeleteOpenIDConnectProvider",
           "iam:GetOpenIDConnectProvider",
           "iam:TagOpenIDConnectProvider",
-          "iam:UntagOpenIDConnectProvider"
+          "iam:UntagOpenIDConnectProvider",
+          "iam:ListRolePolicies",
+          "iam:GetRolePolicy",
+          "iam:PutRolePolicy",
+          "iam:DeleteRolePolicy"
         ]
         Resource = "*"
       },
