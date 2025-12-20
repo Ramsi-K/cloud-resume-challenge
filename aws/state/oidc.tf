@@ -164,6 +164,7 @@ resource "aws_iam_policy" "github_actions_terraform" {
           "dynamodb:CreateTable",
           "dynamodb:DeleteTable",
           "dynamodb:DescribeTable",
+          "dynamodb:DescribeTimeToLive",
           "dynamodb:UpdateTable",
           "dynamodb:TagResource",
           "dynamodb:UntagResource",
