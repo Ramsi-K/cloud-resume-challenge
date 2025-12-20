@@ -19,13 +19,32 @@
 
     async function fetchVisitorCount() {
       try {
-        // POST request to increment counter
-        const response = await fetch(API_ENDPOINT, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
+        // Check if this session has already been counted
+        const sessionCounted = sessionStorage.getItem('visitor-counted');
+
+        let response;
+        if (!sessionCounted) {
+          // First visit in this session - increment counter
+          response = await fetch(API_ENDPOINT, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+
+          // Mark this session as counted
+          sessionStorage.setItem('visitor-counted', 'true');
+          console.log('New session - counter incremented');
+        } else {
+          // Already counted in this session - just get current count
+          response = await fetch(API_ENDPOINT, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+          console.log('Existing session - counter not incremented');
+        }
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -40,7 +59,7 @@
           throw new Error('Invalid response format');
         }
 
-        console.log('Visitor count updated:', data.count);
+        console.log('Visitor count loaded:', data.count);
       } catch (error) {
         console.error('Error fetching visitor count:', error);
 
