@@ -133,12 +133,13 @@ resource "aws_iam_policy" "github_actions_terraform" {
       {
         Effect = "Allow"
         Action = [
-          # Lambda operations
+          # Lambda operations - comprehensive but specific
           "lambda:CreateFunction",
           "lambda:DeleteFunction",
           "lambda:GetFunction",
           "lambda:GetFunctionConfiguration",
           "lambda:GetFunctionCodeSigningConfig",
+          "lambda:GetPolicy",
           "lambda:UpdateFunctionCode",
           "lambda:UpdateFunctionConfiguration",
           "lambda:AddPermission",
@@ -147,7 +148,13 @@ resource "aws_iam_policy" "github_actions_terraform" {
           "lambda:ListFunctions",
           "lambda:ListVersionsByFunction",
           "lambda:TagResource",
-          "lambda:UntagResource"
+          "lambda:UntagResource",
+          "lambda:GetAccountSettings",
+          "lambda:GetEventSourceMapping",
+          "lambda:ListEventSourceMappings",
+          "lambda:CreateEventSourceMapping",
+          "lambda:DeleteEventSourceMapping",
+          "lambda:UpdateEventSourceMapping"
         ]
         Resource = "*"
       },
@@ -162,7 +169,7 @@ resource "aws_iam_policy" "github_actions_terraform" {
       {
         Effect = "Allow"
         Action = [
-          # DynamoDB operations
+          # DynamoDB operations - specific permissions
           "dynamodb:CreateTable",
           "dynamodb:DeleteTable",
           "dynamodb:DescribeTable",
@@ -170,18 +177,63 @@ resource "aws_iam_policy" "github_actions_terraform" {
           "dynamodb:GetItem",
           "dynamodb:PutItem",
           "dynamodb:DeleteItem",
+          "dynamodb:UpdateItem",
           "dynamodb:UpdateTable",
           "dynamodb:TagResource",
           "dynamodb:UntagResource",
           "dynamodb:ListTagsOfResource",
-          "dynamodb:DescribeContinuousBackups"
+          "dynamodb:DescribeContinuousBackups",
+          "dynamodb:UpdateContinuousBackups"
         ]
         Resource = "*"
       },
       {
         Effect = "Allow"
         Action = [
-          # IAM operations (limited)
+          # CloudWatch Logs operations - specific permissions
+          "logs:CreateLogGroup",
+          "logs:DeleteLogGroup",
+          "logs:DescribeLogGroups",
+          "logs:PutRetentionPolicy",
+          "logs:TagResource",
+          "logs:UntagResource",
+          "logs:ListTagsLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ]
+        Resource = "*"
+      },
+      {
+        Effect = "Allow"
+        Action = [
+          # Route53 operations for custom domains
+          "route53:GetHostedZone",
+          "route53:ListHostedZones",
+          "route53:GetChange",
+          "route53:ListResourceRecordSets",
+          "route53:ChangeResourceRecordSets"
+        ]
+        Resource = "*"
+      },
+      {
+        Effect = "Allow"
+        Action = [
+          # ACM operations for SSL certificates
+          "acm:DescribeCertificate",
+          "acm:ListCertificates",
+          "acm:GetCertificate",
+          "acm:RequestCertificate",
+          "acm:DeleteCertificate",
+          "acm:AddTagsToCertificate",
+          "acm:ListTagsForCertificate",
+          "acm:RemoveTagsFromCertificate"
+        ]
+        Resource = "*"
+      },
+      {
+        Effect = "Allow"
+        Action = [
+          # IAM operations (limited to what Terraform needs)
           "iam:CreateRole",
           "iam:DeleteRole",
           "iam:GetRole",
