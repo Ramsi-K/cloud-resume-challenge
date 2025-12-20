@@ -144,6 +144,7 @@ resource "aws_iam_policy" "github_actions_terraform" {
           "lambda:RemovePermission",
           "lambda:InvokeFunction",
           "lambda:ListFunctions",
+          "lambda:ListVersionsByFunction",
           "lambda:TagResource",
           "lambda:UntagResource"
         ]
@@ -165,6 +166,9 @@ resource "aws_iam_policy" "github_actions_terraform" {
           "dynamodb:DeleteTable",
           "dynamodb:DescribeTable",
           "dynamodb:DescribeTimeToLive",
+          "dynamodb:GetItem",
+          "dynamodb:PutItem",
+          "dynamodb:DeleteItem",
           "dynamodb:UpdateTable",
           "dynamodb:TagResource",
           "dynamodb:UntagResource",
@@ -186,6 +190,7 @@ resource "aws_iam_policy" "github_actions_terraform" {
           "iam:CreatePolicy",
           "iam:DeletePolicy",
           "iam:GetPolicy",
+          "iam:GetPolicyVersion",
           "iam:ListAttachedRolePolicies",
           "iam:TagRole",
           "iam:UntagRole",
