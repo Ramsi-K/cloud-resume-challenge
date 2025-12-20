@@ -198,6 +198,7 @@ resource "aws_iam_policy" "github_actions_terraform" {
           "logs:TagResource",
           "logs:UntagResource",
           "logs:ListTagsLogGroup",
+          "logs:ListTagsForResource",
           "logs:CreateLogStream",
           "logs:PutLogEvents"
         ]
