@@ -6,10 +6,10 @@
   </p>
 </div>
 
---8<-- "docs/\_includes/projects-section.md"
+--8<-- "docs/includes/projects-section.md"
 
---8<-- "docs/\_includes/learning-section.md"
+--8<-- "docs/includes/learning-section.md"
 
---8<-- "docs/\_includes/about-section.md"
+--8<-- "docs/includes/about-section.md"
 
---8<-- "docs/\_includes/contact-section.md"
+--8<-- "docs/includes/contact-section.md"
