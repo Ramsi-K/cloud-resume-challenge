@@ -6,24 +6,10 @@
   </p>
 </div>
 
-## Featured Projects
+--8<-- "docs/\_includes/projects-section.md"
 
-**Yoga Assistant Knowledge RAG** - End-to-end retrieval system achieving 23% MRR improvement through hybrid retrieval and LLM benchmarking.  
-[Learn more →](projects/yoga-rag.md)
+--8<-- "docs/\_includes/learning-section.md"
 
-**HagXwon AI Learning Platform** - MBA + AI enterprise architecture for Korea's $20B+ hagwon industry with 8 working AI prototypes.  
-[Learn more →](projects/hagxwon.md)
+--8<-- "docs/\_includes/about-section.md"
 
-**EdgeMind 5G-MEC** - Real-time AI orchestration at telecom edge with Strands agent swarms for sub-100ms decision making.  
-[Learn more →](projects/edgemind.md)
-
----
-
-## About This Website
-
-This site is part of my multi-cloud Cloud Resume Challenge. The infrastructure uses AWS, Azure, and GCP with Terraform and GitHub Actions for automated deployment across three major cloud providers.
-
-[View project details →](projects/cloud-resume-challenge.md)
-
-Outside of work, I like puppies, good stationery, and quiet evenings with a book.
-ENFP in temperament — I work best in collaborative, idea-driven environments and enjoy connecting systems, people, and purpose.
+--8<-- "docs/\_includes/contact-section.md"

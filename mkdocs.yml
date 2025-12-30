@@ -7,18 +7,21 @@ theme:
   name: material
   logo: assets/images/favicon_io/favicon-32x32.png
   favicon: assets/images/favicon_io/favicon.ico
+  font:
+    text: IBM Plex Mono
+    code: IBM Plex Mono
   palette:
     # Light mode
     - scheme: default
       primary: black
-      accent: indigo
+      accent: pink
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     # Dark mode
     - scheme: slate
       primary: black
-      accent: indigo
+      accent: pink
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -34,25 +37,10 @@ theme:
   custom_dir: docs/overrides
 
 nav:
-  - Home: index.md
-  - Resume: resume/index.md
-  - Projects:
-      - Overview: projects/index.md
-      - Cloud Resume Challenge: projects/cloud-resume-challenge.md
-      - Yoga Assistant RAG: projects/yoga-rag.md
-      - HagXwon AI Platform: projects/hagxwon.md
-      - MCP Albumentations: projects/mcp-albumentations.md
-      - EdgeMind 5G-MEC: projects/edgemind.md
-      - Knowledge Graph Agents: projects/knowledge-graph-agents.md
-      - Discord MCP Server: projects/discord-mcp.md
-      - Korean Learning MUD: projects/korean-learning-mud.md
+  - About: index.md
   - Blog: blog/index.md
-  - Research: blog/research/research-papers.md
-  - Learning Journey:
-      - Overview: learning-journey.md
-      - 300 Days 2025: blog/logs/300-days-2025.md
-      - 300 Days 2024: blog/logs/300-days-2024.md
-  - Contact: contact.md
+  - Resume: resume/index.md
+  - Projects: projects/index.md
 
 plugins:
   - search
@@ -90,6 +78,9 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.critic
   - pymdownx.details
+  - pymdownx.snippets:
+      base_path: ['.']
+      check_paths: true
   - admonition
   - attr_list
   - md_in_html
@@ -98,6 +89,9 @@ markdown_extensions:
 
 extra:
   social:
+    - icon: fontawesome/solid/envelope
+      link: mailto:ramsi.kalia@gmail.com
+      name: Email
     - icon: fontawesome/brands/github
       link: https://github.com/Ramsi-K
       name: GitHub

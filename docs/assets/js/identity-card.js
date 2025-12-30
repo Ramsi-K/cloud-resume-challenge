@@ -24,7 +24,7 @@
     const identityCard = document.createElement('div');
     identityCard.className = 'identity-card';
     identityCard.innerHTML = `
-      <img src="${getBasePath()}/assets/images/profile_image.webp" alt="Ramsi Kalia" class="identity-card__avatar">
+      <img src="${getBasePath()}/assets/images/chibi_char.webp" alt="Ramsi Kalia" class="identity-card__avatar">
       <h3 class="identity-card__name">Ramsi Kalia</h3>
       <p class="identity-card__role">AI Engineer | Cloud Practitioner</p>
       

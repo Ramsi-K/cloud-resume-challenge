@@ -121,6 +121,17 @@
   max-width: 700px;
 }
 
+/* FORCE CORRECT LAYOUT - Override any conflicting styles */
+.md-content__inner {
+  display: block !important;
+  grid-template-columns: none !important;
+}
+
+.md-content article {
+  display: block !important;
+  grid-template-columns: none !important;
+}
+
 /* Section spacing and hierarchy */
 .md-content h2 {
   margin-top: 3rem;
@@ -129,6 +140,36 @@
   font-weight: 700;
   border-bottom: 2px solid var(--md-accent-fg-color);
   padding-bottom: 0.5rem;
+  width: 100% !important;
+  display: block !important;
+  grid-column: unset !important;
+  float: none !important;
+  clear: both !important;
+}
+
+/* Two-column layout for individual sections */
+.section-two-column {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  width: 100% !important;
+  clear: both !important;
+}
+
+.section-two-column .column-left,
+.section-two-column .column-right {
+  min-height: 0; /* Prevents grid items from overflowing */
+  display: block !important;
+}
+
+/* Responsive: Stack columns on smaller screens */
+@media screen and (max-width: 768px) {
+  .section-two-column {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
 }
 
 .md-content h3 {
@@ -138,10 +179,7 @@
   font-weight: 600;
 }
 
-/* Remove the old centered visitor counter */
-.md-content > div[style*="text-align: center"][style*="background-color"] {
-  display: none;
-}
+
 
 /* Project cards styling */
 .md-content ul li {
@@ -215,27 +253,7 @@
   border-color: var(--md-accent-fg-color);
 }
 
-/* Footer visitor counter (alternative placement) */
-.md-footer-meta {
-  position: relative;
-}
 
-.footer-counter {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  font-size: 0.75rem;
-  color: var(--md-default-fg-color--light);
-  background: var(--md-default-bg-color);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  border: 1px solid var(--md-default-fg-color--lightest);
-}
-
-.footer-counter__value {
-  font-weight: 700;
-  color: var(--md-accent-fg-color);
-}
 
 /* Improve link styling */
 .md-content a {

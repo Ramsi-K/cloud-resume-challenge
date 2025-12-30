@@ -148,11 +148,4 @@ Key insights from designing an AI learning platform:
 
 ---
 
-## Related Projects
-
-- [HagXwon Project Page](../../projects/hagxwon.md) - Implementation details and demo
-- [GenAI Bootcamp](../logs/300-days-2025.md) - Context for this architecture study
-
----
-
 [← Back to Blog](../index.md)

@@ -15,9 +15,9 @@ New Delhi, India • [LinkedIn](https://linkedin.com/in/ramsikalia) • [X/Twitt
 
 ## Summary
 
-AI Engineer (MBA, MSc) specializing in agentic AI workflows, MCP toolchains, and scalable deployment. Experienced in designing multi-agent systems that integrate LLMs, retrieval, tool use, and conversational control. Built projects including an MCP augmentation server with optional VLM integration, a dual-agent orchestration pipeline, a domain knowledge RAG system, and research on turn detection for AI-powered language learning.
+AI Engineer (MBA, MSc) specializing in agentic AI workflows, MCP toolchains, and scalable deployment. Experienced in designing multi-agent systems that integrate LLMs, retrieval, tool use, and conversational control.
 
-AWS Certified Cloud Practitioner and AI Practitioner, with 2 years of portfolio work across deep learning, LLMOps, and MCP deployment. Strong documentation and cross-functional collaboration skills, converting research concepts into reliable, production-ready workflows.
+Strong documentation and cross-functional collaboration skills, converting research concepts into reliable, production-ready workflows.
 
 ---
 
