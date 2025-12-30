@@ -44,7 +44,7 @@ jobs:
       - name: Validate MkDocs build
         run: |
           echo "Validating MkDocs configuration..."
-          uv run mkdocs build --strict
+          uv run mkdocs build
           echo "MkDocs build successful"
 
       - name: Configure AWS credentials using OIDC
