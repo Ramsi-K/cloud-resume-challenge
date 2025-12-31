@@ -1,8 +1,13 @@
 // Visitor Counter Widget
-// Connected to AWS API Gateway + Lambda + DynamoDB
+// Multi-cloud deployment support
 
 (function () {
-  // API endpoint using custom domain
+  // API endpoint
+
+  // Multi-cloud API endpoints:
+  // AWS: https://api.ramsi.dev/visitor-count
+  // GCP: https://us-central1-cloud-resume-challenge-482812.cloudfunctions.net/cloud-resume-challenge-visitor-counter
+  // Azure: (planned) https://api.ramsi.dev/visitor-count
   const API_ENDPOINT = 'https://api.ramsi.dev/visitor-count';
 
   function initVisitorCounter() {
