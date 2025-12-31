@@ -10,14 +10,18 @@ resource "azurerm_dns_zone" "main" {
   }
 }
 
-# CNAME record for www pointing to storage account
+# CNAME record for www pointing to Static Web App
 resource "azurerm_dns_cname_record" "www" {
   name                = "www"
   zone_name           = azurerm_dns_zone.main.name
   resource_group_name = azurerm_resource_group.main.name
-  ttl                 = 3600
-  record              = replace(replace(azurerm_storage_account.website.primary_web_endpoint, "https://", ""), "/", "")
+  ttl                 = 300
+  record              = azurerm_static_web_app.website.default_host_name
 }
 
-# A record for apex domain (will be configured manually)
-# Note: Azure Storage doesn't support apex domain directly, so we'll use CNAME for www only
+# Custom domain for Static Web App
+resource "azurerm_static_web_app_custom_domain" "website" {
+  static_web_app_id = azurerm_static_web_app.website.id
+  domain_name       = "www.${var.domain_name}"
+  validation_type   = "cname-delegation"
+}

@@ -13,9 +13,14 @@ output "storage_website_endpoint" {
   value       = azurerm_storage_account.website.primary_web_endpoint
 }
 
-output "storage_website_host" {
-  description = "Storage account static website host"
-  value       = replace(replace(azurerm_storage_account.website.primary_web_endpoint, "https://", ""), "/", "")
+output "static_web_app_url" {
+  description = "Static Web App default URL"
+  value       = "https://${azurerm_static_web_app.website.default_host_name}"
+}
+
+output "static_web_app_name" {
+  description = "Static Web App name"
+  value       = azurerm_static_web_app.website.name
 }
 
 output "dns_zone_nameservers" {
@@ -24,6 +29,6 @@ output "dns_zone_nameservers" {
 }
 
 output "website_url" {
-  description = "Website URL (use www subdomain)"
+  description = "Website URL with CDN and custom domain"
   value       = "https://www.${var.domain_name}"
 }
